@@ -35,7 +35,7 @@ app.post("/convertImage", async(request, res) => {
     let reqParam = request.body;
     console.log("Welcome.....");
     console.log("reqParam", reqParam);
-
+try{
     var resultObj = {};
     const htmlData = reqParam.htmlData;
     const fileName = reqParam.fname;
@@ -74,7 +74,9 @@ app.post("/convertImage", async(request, res) => {
 
     }
     return res.json(resultObj);
-
+}catch(error){
+console.log("catch-error", error);
+}
 
 });
 
